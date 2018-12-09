@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF7F00",
+    "navigationBarTitleText": "天天奇闻",
+    "navigationBarTextStyle": "white"
+  }
+}

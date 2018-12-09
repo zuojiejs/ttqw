@@ -1,0 +1,35 @@
+<!--pages/index/index.wxml-->
+<view wx:if="{{list[index]}}" class="container">
+  <view class="title">{{list[index].title}}</view>
+  <view wx:for="{{list[index].data}}" wx:key class="block">
+    <block wx:if="{{item.text}}">
+      {{item.text}}
+    </block>
+    <block wx:else>
+      <image mode="widthFix" src="{{item.image}}" data-image="{{item.image}}" bindtap="previewImage"></image>
+      <view wx:if="{{item.desc}}" class="text">
+        {{item.desc}}
+      </view>
+    </block>
+  </view>
+  <view wx:if="{{share && share.show}}" class="tips"><text>转发给朋友，让TA也看看吧</text></view>
+  <view class="shareIcon">
+    <image mode="widthFix" src="../../images/arr.gif"></image>
+    <image mode="widthFix" src="../../images/arr.gif"></image>
+    <image mode="widthFix" src="../../images/arr.gif"></image>
+  </view>
+</view>
+<view class="foot">
+  <view class="btn" bindtap="viewPre">
+    <image src="../../images/pre.png"></image>
+    <text>上一篇</text>
+  </view>
+  <button wx:if="{{share && share.show}}" class="btn" hover-class="none" open-type="share">
+    <image src="../../images/share.png"></image>
+    <text class="bold">转发</text>
+  </button>
+  <view class="btn" bindtap="viewNext">
+    <image src="../../images/next.png"></image>
+    <text>下一篇</text>
+  </view>
+</view>
