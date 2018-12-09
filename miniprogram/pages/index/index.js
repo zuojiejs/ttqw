@@ -180,12 +180,13 @@ Page({
 						}, this.reportViewId)
 						this.setCache(list)
 						// 分享新增奇闻case，提示新增数目
-						if (data.num && res.result.list.length > 0 && this.data.share.show) {
-							wx.showToast({
-								title: `已为你新增${res.result.list.length}条奇闻`,
-								icon: 'success',
-								duration: 2000
-							})
+            if (data.num && res.result.list.length > 0 && this.data.share.show) {
+              wx.showModal({
+                title: "分享成功",
+                content: `根据您的分享，已为你新增${res.result.list.length}条奇闻`,
+                confirmText: "确定",
+                showCancel: false
+              })
 						}
 					} else {
 						this.handleLoadError(data, cb)
@@ -227,6 +228,10 @@ Page({
 			this.setData({
 				index: this.data.index - 1
 			}, this.reportViewId)
+      wx.pageScrollTo({
+        scrollTop: 0,
+        duration: 300
+      })
 		},
 
 		// 后翻
@@ -251,7 +256,11 @@ Page({
 			}
 			this.setData({
 				index: this.data.index + 1
-			}, this.reportViewId)
+      }, this.reportViewId)
+      wx.pageScrollTo({
+        scrollTop: 0,
+        duration: 300
+      })
 		},
 
 		// 上报查看的奇闻
