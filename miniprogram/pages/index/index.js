@@ -379,7 +379,7 @@ Page({
 				this.getList({ num: this.data.share.num, viewedIds })
 			}, 3000)
 
-			if (this.data.list.lengthm > 0) {
+			if (this.data.list.length > 0) {
 				const currItem = this.data.list[this.data.index]
 				return {
 					title: this.data.share.text,
